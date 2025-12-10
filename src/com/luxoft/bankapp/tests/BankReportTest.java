@@ -1,8 +1,6 @@
 package com.luxoft.bankapp.tests;
 
-import com.luxoft.bankapp.domain.Bank;
-import com.luxoft.bankapp.domain.Client;
-import com.luxoft.bankapp.domain.Gender;
+import com.luxoft.bankapp.domain.*;
 import com.luxoft.bankapp.exceptions.ClientExistsException;
 import com.luxoft.bankapp.service.BankReport;
 import org.junit.Before;
@@ -21,12 +19,12 @@ public class BankReportTest {
         bankReport = new BankReport();
 
         Client client1 = new Client("John Doe", Gender.MALE);
-        client1.addAccount(new com.luxoft.bankapp.domain.SavingAccount(1, 1000));
-        client1.addAccount(new com.luxoft.bankapp.domain.CheckingAccount(2, 2000, 1000));
+        client1.addAccount(new SavingAccount(1, 1000));
+        client1.addAccount(new CheckingAccount(2, 2000, 1000));
         bank.addClient(client1);
 
         Client client2 = new Client("Jane Smith", Gender.FEMALE);
-        client2.addAccount(new com.luxoft.bankapp.domain.SavingAccount(3, 3000));
+        client2.addAccount(new SavingAccount(3, 3000));
         bank.addClient(client2);
     }
 
